@@ -1,28 +1,22 @@
-def swap(arr, i, j):
-	arr = list(arr)
-	arr[i], arr[j] = arr[j], arr[i]
-	# string = ''.join(string)
-	return arr
-
-
-def all_permutation(arr: list, index: int = 0):
-	global arr_set
-	if index == len(arr) -1 :
-		arr_set.append(arr)
-		print(arr, end="\n")
-		return
-
-	for j in range(index, len(arr)):
-		arr = swap(arr, index, j)
-		all_permutation(arr, index+1)
-		arr = swap(arr, j, index)
-
-
+def swap(ch, i, j):
+    temp = ch[i]
+    ch[i] = ch[j]
+    ch[j] = temp
+ 
+ 
+def permutations(ch, curr_index=0):
+ 
+    if curr_index == len(ch) - 1:
+        print(''.join(ch))
+ 
+    for i in range(curr_index, len(ch)):
+        swap(ch, curr_index, i)
+        permutations(ch, curr_index + 1)
+        swap(ch, curr_index, i)
+ 
+ 
 if __name__ == '__main__':
-	arr_set = []
-	input_arr = list(map(int, input().split()))
-	print("\n")
-	all_permutation(input_arr)
-	arr = list(arr_set)
-	arr.sort()
-	print(arr)
+    s = input()
+    print("\n")
+    permutations(list(s))
+ 
