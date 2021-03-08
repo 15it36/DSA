@@ -7,14 +7,14 @@ void insertion_sort(int arr[], int low, int n)
 
 	for(int i=low+1;i<n+1;i++) 
 	{ 
-		int val = arr[i] ; 
+		int val = arr[i]; 
 		int j = i ; 
 		while (j>low && arr[j-1]>val) 
 		{ 
-			arr[j]= arr[j-1] ; 
+			arr[j]= arr[j-1]; 
 			j-= 1; 
 		}
-		arr[j]= val ; 
+		arr[j]= val; 
 	} 
 
 } 
@@ -22,7 +22,7 @@ void insertion_sort(int arr[], int low, int n)
 
 int partition(int arr[], int low, int high) 
 { 
-	int pivot = arr[high] ; 
+	int pivot = arr[high]; 
 	int i ,j; 
 	i = low; 
 	j = low; 
@@ -59,7 +59,7 @@ while (low < high)
 
 	else
 	{ 
-		int pivot = partition(arr, low, high) ;
+		int pivot = partition(arr, low, high);
 
 		if (pivot-low<high-pivot) 
 		{ 
