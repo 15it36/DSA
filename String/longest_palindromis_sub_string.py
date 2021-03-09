@@ -23,7 +23,7 @@ try:
 			start = i
 			max_length = 2
 		i = i + 1
-
+	
 	"""
 	Finding Substring Grater than length 2
 	"""
@@ -39,6 +39,7 @@ try:
 					start = i
 					max_length = k
 			i = i + 1
+		
 		k = k + 1
 
 	print(max_length, value[start: start+max_length+1])
